@@ -17,9 +17,9 @@ label_classes = {
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(description='Lung Segmentation')
-    parser.add_argument('-i', '--input_fn', help='Input CT Lung Volume', required=False)
-    parser.add_argument('-o', '--output_fn', help='Output Segmentation Mask')
-    parser.add_argument('-m', '--model', help='Trained Model', required=False)
+    parser.add_argument('-i', '--input_fn', help='Input CT Lung Volume', required=False, default='/tmp/input.mha')
+    parser.add_argument('-o', '--output_fn', help='Output Segmentation Mask', required=False, default='/tmp/output.mha')
+    parser.add_argument('-m', '--model', help='Trained Model', required=False, default='DeeplabV3Plus.tf')
     parser.add_argument('-v', '--verbose', help='Verbose Output', action='store_true', default=False)
     args = vars(parser.parse_args())
 
